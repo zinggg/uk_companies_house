@@ -27,7 +27,7 @@ $ gem install uk_companies_house
 Initialize the the gem by setting your personal API key:
 
 ```
-    UkCompaniesHouse.api_key = 'YOUR_API_KEY'
+UkCompaniesHouse.api_key = 'YOUR_API_KEY'
 ```
 
 Or create ENV variable UK_COMPANIES_HOUSE_API_KEY ( ENV['UK_COMPANIES_HOUSE_API_KEY'] ) with you API KEY
