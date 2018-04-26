@@ -30,6 +30,8 @@ Initialize the the gem by setting your personal API key:
     UkCompaniesHouse.api_key = 'yxzHw4iE_Pw2I-QJoi1HLezpq-fx3BfbgMEK3euG'
 ```
 
+Or create ENV variable UK_COMPANIES_HOUSE_API_KEY ( ENV['UK_COMPANIES_HOUSE_API_KEY'] ) with you API KEY
+
 ## Usage
 
 The path "company/06790962/filing-history" can be replaced by any other path available in the companieshouse.gov.uk documentation:
@@ -72,8 +74,6 @@ filing_history = UkCompaniesHouse::Company.filing_history('06790962', 'MzE5NTI2N
 }
 
 ```
-
-
 
 
 ##Available methods:
