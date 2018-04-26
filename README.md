@@ -14,6 +14,12 @@ Add this line to your application's Gemfile:
 gem 'uk_companies_house'
 ```
 
+OR:
+```ruby
+gem install uk_companies_house
+```
+
+
 And then execute:
 
 $ bundle
