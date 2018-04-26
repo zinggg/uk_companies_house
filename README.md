@@ -16,11 +16,11 @@ gem 'uk_companies_house'
 
 And then execute:
 
-    $ bundle
+$ bundle
 
 Or install it yourself as:
 
-    $ gem install uk_companies_house
+$ gem install uk_companies_house
 
 ## Setup
 
@@ -39,13 +39,13 @@ https://developer.companieshouse.gov.uk/api/docs/
 
 Get request for any URL ( "company/06790962/filing-history" can be changed to any path ):
 ```
-    UkCompaniesHouse::Client.new.get("company/06790962/filing-history")
+UkCompaniesHouse::Client.new.get("company/06790962/filing-history")
 ```
 (POST url have same format)
 To send new request via POST just change get to post:
 example:
 ```
-    UkCompaniesHouse::Client.new.post("company/06790962/filing-history", { q: "any params with any query can be added", extra2: "more params" })
+UkCompaniesHouse::Client.new.post("company/06790962/filing-history", { q: "any params with any query can be added", extra2: "more params" })
 ```
 
 ## Example
@@ -81,17 +81,17 @@ filing_history = UkCompaniesHouse::Company.filing_history('06790962', 'MzE5NTI2N
 ### Global search:
 
 ```
-    # Search Companies House
-    UkCompaniesHouse::Search.all("query text", items_per_page, start_index)
+# Search Companies House
+UkCompaniesHouse::Search.all("query text", items_per_page, start_index)
 
-    # Search company information
-    UkCompaniesHouse::Search.company("query text", items_per_page, start_index)
+# Search company information
+UkCompaniesHouse::Search.company("query text", items_per_page, start_index)
 
-    # Search for officer information
-    UkCompaniesHouse::Search.officers("query text", items_per_page, start_index)
+# Search for officer information
+UkCompaniesHouse::Search.officers("query text", items_per_page, start_index)
 
-    # Search for disqualified officer information
-    UkCompaniesHouse::Search.disqualified_officers("query text", items_per_page, start_index)
+# Search for disqualified officer information
+UkCompaniesHouse::Search.disqualified_officers("query text", items_per_page, start_index)
 
 ```
 
@@ -99,57 +99,57 @@ filing_history = UkCompaniesHouse::Company.filing_history('06790962', 'MzE5NTI2N
 ### Company:
 
 ```
-    # Search company information
-    UkCompaniesHouse::Company.search(q: "Query text")
-    UkCompaniesHouse::Company.search(q: "Query Text, items_per_page = 5, start_index = 5)
+# Search company information
+UkCompaniesHouse::Company.search(q: "Query text")
+UkCompaniesHouse::Company.search(q: "Query Text, items_per_page = 5, start_index = 5)
 
-    # Basic company information
-    UkCompaniesHouse::Company.basic_information(company_number)
+# Basic company information
+UkCompaniesHouse::Company.basic_information(company_number)
 
-    # Registered office address
-    UkCompaniesHouse::Company.office_address(company_number)
+# Registered office address
+UkCompaniesHouse::Company.office_address(company_number)
 
-    # List of all company officers
-    UkCompaniesHouse::Company.officers(company_number)
+# List of all company officers
+UkCompaniesHouse::Company.officers(company_number)
 
-    # Get the filing history list of a company
-    UkCompaniesHouse::Company.filing_history(company_number, transaction_id)
+# Get the filing history list of a company
+UkCompaniesHouse::Company.filing_history(company_number, transaction_id)
 
-    # Get the filing history list of a company
-    UkCompaniesHouse::Company.filing_history_list(company_number, category, items_per_page, start_index)
+# Get the filing history list of a company
+UkCompaniesHouse::Company.filing_history_list(company_number, category, items_per_page, start_index)
 
-    # Company insolvency information.
-    UkCompaniesHouse::Company.insolvency(company_number)
+# Company insolvency information.
+UkCompaniesHouse::Company.insolvency(company_number)
 
-    # Individual charge information for company.
-    UkCompaniesHouse::Company.charge(company_number, charge_id)
+# Individual charge information for company.
+UkCompaniesHouse::Company.charge(company_number, charge_id)
 
-    # List of uk-establishments companies
-    UkCompaniesHouse::Company.uk_establishments(company_number)
+# List of uk-establishments companies
+UkCompaniesHouse::Company.uk_establishments(company_number)
 
-    # List the company persons with significant control
-    UkCompaniesHouse::Company.corporate_entities(company_number
+# List the company persons with significant control
+UkCompaniesHouse::Company.corporate_entities(company_number
 
-    # Get details of an individual person with significant control
-    UkCompaniesHouse::Company.individual_person(company_number, psc_id)
+# Get details of an individual person with significant control
+UkCompaniesHouse::Company.individual_person(company_number, psc_id)
 
-    # Get details of a corporate entity with significant control
-    UkCompaniesHouse::Company.corporate_entity(company_number, psc_id)
+# Get details of a corporate entity with significant control
+UkCompaniesHouse::Company.corporate_entity(company_number, psc_id)
 
-    # Get details of a legal person with significant contro
-    UkCompaniesHouse::Company.legal_persons(company_number, psc_id)
+# Get details of a legal person with significant contro
+UkCompaniesHouse::Company.legal_persons(company_number, psc_id)
 
-    # List of all persons with significant control statements
-    UkCompaniesHouse::Company.list_statements(company_number)
+# List of all persons with significant control statements
+UkCompaniesHouse::Company.list_statements(company_number)
 
-    # Get details of a person with significant control statement
-    UkCompaniesHouse::Company.statements(company_number)
+# Get details of a person with significant control statement
+UkCompaniesHouse::Company.statements(company_number)
 
-    # Get company registers information
-    UkCompaniesHouse::Company.registers(company_number)
+# Get company registers information
+UkCompaniesHouse::Company.registers(company_number)
 
-    # Company exemptions information
-    UkCompaniesHouse::Company.exemptions(company_number)
+# Company exemptions information
+UkCompaniesHouse::Company.exemptions(company_number)
 
 ```
 
@@ -157,14 +157,14 @@ filing_history = UkCompaniesHouse::Company.filing_history('06790962', 'MzE5NTI2N
 ### Officer:
 
 ```
-    # List of all officer appointments
-    UkCompaniesHouse::Officer.appointments(officer_id)
+# List of all officer appointments
+UkCompaniesHouse::Officer.appointments(officer_id)
 
-    # Get a natural officer's disqualifications
-    UkCompaniesHouse::Officer.natural_disqualified(officer_id)
+# Get a natural officer's disqualifications
+UkCompaniesHouse::Officer.natural_disqualified(officer_id)
 
-    # Get a corporate officer's disqualifications
-    UkCompaniesHouse::Officer.corporate_disqualified(officer_id)
+# Get a corporate officer's disqualifications
+UkCompaniesHouse::Officer.corporate_disqualified(officer_id)
 
 ```
 
