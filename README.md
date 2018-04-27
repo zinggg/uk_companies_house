@@ -21,12 +21,14 @@ gem install uk_companies_house
 
 
 And then execute:
-
-$ bundle
+```ruby
+bundle
+```
 
 Or install it yourself as:
-
-$ gem install uk_companies_house
+```ruby
+gem install uk_companies_house
+```
 
 ## Setup
 
