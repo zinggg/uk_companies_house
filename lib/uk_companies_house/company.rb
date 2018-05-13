@@ -16,7 +16,8 @@ module UkCompaniesHouse
 
       # Basic company information
       def basic_information(company_number)
-        client.get("company/", {company_number: company_number})
+        number = company_number.gsub(/[^a-zA-Z0-9]/, "")
+        client.get("/company/#{number}")
       end
 
       # Registered office address
