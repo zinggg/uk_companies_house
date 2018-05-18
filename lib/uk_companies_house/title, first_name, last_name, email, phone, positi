@@ -1,0 +1,11 @@
+rails g model Contact title first_name last_name email phone position date_of_birth:date passport passport_number contact_type notes country:references
+
+
+proof_address
+postcode
+
+rails g model Address address postcode country:references location latitude:float longitude:float
+
+
+rails g model ContactAddresses address:references contact:references primary:boolean
+rails g model CompanyAddresses address:references company:references primary:boolean type:integer:index

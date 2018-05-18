@@ -1,4 +1,5 @@
 module UkCompaniesHouse
+
   class Client
     attr_accessor :api_key
 
@@ -28,7 +29,8 @@ module UkCompaniesHouse
       connection.get do |req|
         req.url url
         req.headers['Content-Type'] = 'application/json'
-        req.body = data.to_json
+        req.params = data
+        #req.body = data.to_json
       end
     end
 

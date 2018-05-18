@@ -7,16 +7,20 @@ module UkCompaniesHouse
       end
 
       # Search company information
-      def search(q, items_per_page = nil, start_index = nil)
-        params = {q: q,
-                  items_per_page: items_per_page,
-                  start_index: start_index}
-        client.get("search/companies/", params)
+      def search(query, items_per_page = nil, start_index = nil)
+        params = {q: query}
+        if items_per_page
+          params[:items_per_page] = items_per_page
+        end
+        if start_index
+          params[:start_index] = start_index
+        end
+        client.get("search/companies", params)
       end
 
       # Basic company information
       def basic_information(company_number)
-        number = company_number.gsub(/[^a-zA-Z0-9]/, "")
+        number = "#{company_number}".gsub(/[^a-zA-Z0-9]/, "")
         client.get("/company/#{number}")
       end
 
@@ -37,9 +41,13 @@ module UkCompaniesHouse
 
       # Get the filing history list of a company
       def filing_history_list(company_number, category = nil, items_per_page = nil, start_index = nil)
-        params = {category: category,
-            items_per_page: items_per_page,
-            start_index: start_index}
+        params = {category: category}
+        if items_per_page
+          params[:items_per_page] = items_per_page
+        end
+        if start_index
+          params[:start_index] = start_index
+        end
         client.get("company/#{company_number}/officers/", params)
       end
 
@@ -55,7 +63,13 @@ module UkCompaniesHouse
 
       # List of charges for a company.
       def charges(company_number, items_per_page = nil, start_index = nil)
-        params = {items_per_page: items_per_page, start_index: start_index}
+        params = {}
+        if items_per_page
+          params[:items_per_page] = items_per_page
+        end
+        if start_index
+          params[:start_index] = start_index
+        end
         client.get("company/#{company_number}/charges/", params)
       end
 

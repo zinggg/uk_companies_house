@@ -11,7 +11,7 @@ module UkCompaniesHouse
         params = {q: q,
                   items_per_page: items_per_page,
                   start_index: start_index}
-        client.get("search/", params)
+        client.get("search", params)
       end
 
       #Search company information
@@ -19,7 +19,7 @@ module UkCompaniesHouse
         params = {q: q,
                   items_per_page: items_per_page,
                   start_index: start_index}
-        client.get("search/companies/", params)
+        client.get("search/companies", params)
       end
 
       # Search for officer information
@@ -35,7 +35,7 @@ module UkCompaniesHouse
         params = {q: q,
                   items_per_page: items_per_page,
                   start_index: start_index}
-        client.get("search/disqualified-officers/", params)
+        client.get("search/disqualified-officers", params)
       end
 
     end
