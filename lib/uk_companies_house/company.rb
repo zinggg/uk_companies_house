@@ -30,8 +30,14 @@ module UkCompaniesHouse
       end
 
       # List of all company officers
-      def officers(company_number)
-        client.get("company/#{company_number}/officers/")
+      def officers(company_number, items_per_page = nil, start_index = nil, register_type = nil, order_by = nil, register_view = nil)
+        params = {}
+        params[:items_per_page] = items_per_page if items_per_page
+        params[:start_index] = start_index if start_index
+        params[:register_type] = register_type if register_type
+        params[:order_by] = order_by if order_by
+        params[:register_view] = register_view if register_view
+        client.get("company/#{company_number}/officers/", params)
       end
 
       # Get the filing history list of a company
@@ -42,12 +48,9 @@ module UkCompaniesHouse
       # Get the filing history list of a company
       def filing_history_list(company_number, category = nil, items_per_page = nil, start_index = nil)
         params = {category: category}
-        if items_per_page
-          params[:items_per_page] = items_per_page
-        end
-        if start_index
-          params[:start_index] = start_index
-        end
+        params[:items_per_page] = items_per_page if items_per_page
+        params[:start_index] = start_index if start_index
+
         client.get("company/#{company_number}/officers/", params)
       end
 
